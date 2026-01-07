@@ -502,6 +502,260 @@
             gap: 1rem;
         }
         
+        /* Certificates Section */
+        .certificates {
+            background-color: var(--darker);
+            position: relative;
+        }
+        
+        .certificates:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+        }
+        
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .certificate-card {
+            background: rgba(26, 26, 46, 0.5);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid rgba(125, 79, 255, 0.1);
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .certificate-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary);
+        }
+        
+        .certificate-header {
+            height: 180px;
+            background: linear-gradient(135deg, rgba(125, 79, 255, 0.1), rgba(0, 217, 255, 0.05));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .certificate-icon {
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.7;
+        }
+        
+        .certificate-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 42, 109, 0.2);
+            color: var(--accent);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 42, 109, 0.3);
+        }
+        
+        .certificate-content {
+            padding: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .certificate-content h3 {
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .certificate-content p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+        
+        .certificate-date {
+            color: var(--primary);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        
+        .certificate-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            padding: 8px 16px;
+            background: rgba(0, 217, 255, 0.1);
+            border-radius: 4px;
+            border: 1px solid rgba(0, 217, 255, 0.3);
+        }
+        
+        .certificate-link:hover {
+            background: rgba(0, 217, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        /* Modal Overlay */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(5, 5, 8, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+        
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            background: var(--darker);
+            border-radius: 15px;
+            width: 90%;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 0 40px rgba(125, 79, 255, 0.3);
+            border: 1px solid rgba(125, 79, 255, 0.3);
+            transform: translateY(30px);
+            transition: transform 0.4s ease;
+        }
+        
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            background: rgba(26, 26, 46, 0.8);
+            border-bottom: 1px solid rgba(125, 79, 255, 0.2);
+        }
+        
+        .modal-header h3 {
+            color: var(--secondary);
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--light);
+            cursor: pointer;
+            transition: var(--transition);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        
+        .close-modal:hover {
+            color: var(--accent);
+            background: rgba(255, 42, 109, 0.1);
+        }
+        
+        .modal-body {
+            padding: 2rem;
+            overflow-y: auto;
+            max-height: calc(90vh - 100px);
+        }
+        
+        .certificate-image-container {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .certificate-image {
+            max-width: 100%;
+            max-height: 500px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(125, 79, 255, 0.3);
+        }
+        
+        .certificate-details {
+            margin-top: 2rem;
+        }
+        
+        .certificate-details h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .certificate-details p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .certificate-info {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .info-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .info-label {
+            color: var(--secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .info-value {
+            color: var(--light);
+            font-weight: 500;
+        }
+        
+        .modal-footer {
+            padding: 1.5rem 2rem;
+            background: rgba(26, 26, 46, 0.8);
+            border-top: 1px solid rgba(125, 79, 255, 0.2);
+            display: flex;
+            justify-content: flex-end;
+        }
+        
         /* Contact Section */
         .contact {
             background-color: var(--darker);
@@ -635,41 +889,6 @@
             margin-top: 2rem;
         }
         
-        /* GitHub Instructions */
-        .github-instructions {
-            background-color: var(--dark);
-            padding: 3rem 0;
-            border-top: 1px solid rgba(125, 79, 255, 0.1);
-        }
-        
-        .github-steps {
-            background: rgba(26, 26, 46, 0.5);
-            padding: 2rem;
-            border-radius: 10px;
-            margin-top: 2rem;
-            border: 1px solid rgba(125, 79, 255, 0.3);
-        }
-        
-        .github-steps ol {
-            margin-left: 1.5rem;
-            margin-top: 1rem;
-        }
-        
-        .github-steps li {
-            margin-bottom: 1rem;
-            color: var(--gray);
-        }
-        
-        .github-steps code {
-            background: rgba(10, 10, 15, 0.8);
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-family: monospace;
-            font-size: 0.9rem;
-            color: var(--secondary);
-            border: 1px solid rgba(125, 79, 255, 0.3);
-        }
-        
         /* Responsive Design */
         @media (max-width: 992px) {
             h1 {
@@ -736,8 +955,22 @@
                 display: block;
             }
             
-            .projects-grid {
+            .projects-grid, .certificates-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .modal-content {
+                width: 95%;
+                max-height: 85vh;
+            }
+            
+            .modal-body {
+                padding: 1.5rem;
+                max-height: calc(85vh - 100px);
+            }
+            
+            .certificate-image {
+                max-height: 300px;
             }
         }
         
@@ -769,6 +1002,15 @@
                 max-width: 250px;
                 text-align: center;
             }
+            
+            .modal-header, .modal-footer {
+                padding: 1rem 1.5rem;
+            }
+            
+            .certificate-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
         }
     </style>
 </head>
@@ -789,6 +1031,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certificates">Certificates</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -953,6 +1196,155 @@
         </div>
     </section>
 
+    <!-- Certificates Section -->
+    <section class="certificates" id="certificates">
+        <div class="container">
+            <h2>My Certificates</h2>
+            <div class="certificates-grid">
+                <!-- Certificate 1 -->
+                <div class="certificate-card" data-certificate="1">
+                    <div class="certificate-header">
+                        <i class="fas fa-certificate certificate-icon"></i>
+                        <span class="certificate-badge">Click to View</span>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>JavaScript Fundamentals</h3>
+                        <p>Completed an intensive course on JavaScript fundamentals including ES6+ features, DOM manipulation, and asynchronous programming.</p>
+                        <span class="certificate-date">Issued: May 2024</span>
+                        <a href="#" class="certificate-link view-certificate-btn" data-certificate="1">
+                            <i class="fas fa-expand-alt"></i> View Certificate
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Certificate 2 -->
+                <div class="certificate-card" data-certificate="2">
+                    <div class="certificate-header">
+                        <i class="fas fa-database certificate-icon"></i>
+                        <span class="certificate-badge">Click to View</span>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>MySQL Database Design</h3>
+                        <p>Certificate for completing database design and optimization course covering normalization, indexing, and complex queries.</p>
+                        <span class="certificate-date">Issued: March 2024</span>
+                        <a href="#" class="certificate-link view-certificate-btn" data-certificate="2">
+                            <i class="fas fa-expand-alt"></i> View Certificate
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Certificate 3 -->
+                <div class="certificate-card" data-certificate="3">
+                    <div class="certificate-header">
+                        <i class="fas fa-gamepad certificate-icon"></i>
+                        <span class="certificate-badge">Click to View</span>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Game Development Basics</h3>
+                        <p>Completed foundational course in game development covering game design principles, Unity basics, and 2D game mechanics.</p>
+                        <span class="certificate-date">Issued: February 2024</span>
+                        <a href="#" class="certificate-link view-certificate-btn" data-certificate="3">
+                            <i class="fas fa-expand-alt"></i> View Certificate
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Certificate 4 -->
+                <div class="certificate-card" data-certificate="4">
+                    <div class="certificate-header">
+                        <i class="fas fa-code certificate-icon"></i>
+                        <span class="certificate-badge">Click to View</span>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Web Development Bootcamp</h3>
+                        <p>Completed comprehensive web development course covering HTML5, CSS3, JavaScript, and responsive design principles.</p>
+                        <span class="certificate-date">Issued: January 2024</span>
+                        <a href="#" class="certificate-link view-certificate-btn" data-certificate="4">
+                            <i class="fas fa-expand-alt"></i> View Certificate
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Certificate 5 -->
+                <div class="certificate-card" data-certificate="5">
+                    <div class="certificate-header">
+                        <i class="fab fa-java certificate-icon"></i>
+                        <span class="certificate-badge">Click to View</span>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Java Programming</h3>
+                        <p>Certificate for completing object-oriented programming course in Java, covering core concepts and application development.</p>
+                        <span class="certificate-date">Issued: December 2023</span>
+                        <a href="#" class="certificate-link view-certificate-btn" data-certificate="5">
+                            <i class="fas fa-expand-alt"></i> View Certificate
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Certificate 6 -->
+                <div class="certificate-card" data-certificate="6">
+                    <div class="certificate-header">
+                        <i class="fas fa-server certificate-icon"></i>
+                        <span class="certificate-badge">Click to View</span>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>PHP Backend Development</h3>
+                        <p>Completed backend development course focusing on PHP, MySQL integration, RESTful APIs, and server-side scripting.</p>
+                        <span class="certificate-date">Issued: November 2023</span>
+                        <a href="#" class="certificate-link view-certificate-btn" data-certificate="6">
+                            <i class="fas fa-expand-alt"></i> View Certificate
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificate Modal -->
+    <div class="modal-overlay" id="certificateModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Certificate Details</h3>
+                <button class="close-modal" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="certificate-image-container">
+                    <img id="modalCertificateImage" class="certificate-image" src="" alt="Certificate Image">
+                </div>
+                <div class="certificate-details">
+                    <h4 id="modalCertificateName">Certificate Name</h4>
+                    <p id="modalCertificateDescription">Certificate description will appear here.</p>
+                    
+                    <div class="certificate-info">
+                        <div class="info-item">
+                            <span class="info-label">Issued By:</span>
+                            <span class="info-value" id="modalIssuedBy">Tech University</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Date Issued:</span>
+                            <span class="info-value" id="modalDateIssued">Month 2024</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Credential ID:</span>
+                            <span class="info-value" id="modalCredentialId">CT-2024-001</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Skills:</span>
+                            <span class="info-value" id="modalSkills">JavaScript, HTML, CSS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn" id="externalLinkBtn" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> View External Link
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
@@ -1030,8 +1422,140 @@
             </div>
         </div>
     </footer>
-
     <script>
+        // Certificate data - Using relative paths from the same repository
+        const certificatesData = {
+            1: {
+                title: "Networking Certificate",
+                description: "Certificate for Completing Basic Networking Course, Earner Has Knowledge towards managing and Modifying Networks",
+                image: "images/certificates/Networking-Certificate.png",
+                issuedBy: "Netacad, Credly",
+                date: "October 10, 2025",
+                credentialId: "NC-2025-001", 
+                skills: "Basic Maintenance and Managament of Networks and Servers",
+                externalLink: "https://www.credly.com/badges/5ffaf686-81da-4287-a126-f2b3c8169215"
+            },
+            2: {
+                title: "Intro to CSS",
+                description: "Certificate for completing Intro to CSS Course On Tesda",
+                image: "images/certificates/Intro to CSS.png",
+                issuedBy: "TESDA",
+                date: "March 6, 2024",
+                skills: "Basic CSS Elements",
+                externalLink: "" 
+            },
+            3: {
+                title: "Setting Up Computer Servers",
+                description: "Completed by: Setting up computer server certificates to ensure secure and trusted communication.",
+                image: "images/certificates/Setting up Computer Servers.png",
+                issuedBy: "TESDA",
+                date: "March 11, 2024",
+                skills: "Completed by: Installing and setting up computer servers",
+                externalLink: "" 
+            },
+            4: {
+                title: "Maintaining Computer Systems and Networks",
+                description: "Completed by: Maintaining computer systems and networks",
+                image: "images/certificates/Maintaining Computer Systems.png",
+                issuedBy: "TESDA",
+                date: " March 11, 2024",
+                skills: "Ability to maintain computer systems and networks, perform basic troubleshooting, and assist in server setup and configuration.",
+                externalLink: ""
+            },
+            5: {
+                title: "Installing and Configuring Computer Systems",
+                description: "Installing and configuring computer systems to ensure proper operation and performance.",
+                image: "images/certificates/Installing and Config.png",
+                issuedBy: "TESDA",
+                date: "March 6, 2024",
+                skills: "Computer system installation, basic configuration, troubleshooting, and hardware/software setup.",
+                externalLink: ""
+            },
+            6: {
+                title: "Developing Designs for User Interface",
+                description: "Developing designs for user interfaces that are simple, user-friendly, and visually clear.",
+                image: "images/certificates/Developing DesignUI.png",
+                issuedBy: "TESDA",
+                date: "April 14, 2024",
+
+                skills: "UI design basics, layout planning, usability principles, and basic design tools.",
+                externalLink: ""
+            }
+        };
+
+        // Modal elements
+        const modal = document.getElementById('certificateModal');
+        const closeModalBtn = document.getElementById('closeModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalCertificateImage = document.getElementById('modalCertificateImage');
+        const modalCertificateName = document.getElementById('modalCertificateName');
+        const modalCertificateDescription = document.getElementById('modalCertificateDescription');
+        const modalIssuedBy = document.getElementById('modalIssuedBy');
+        const modalDateIssued = document.getElementById('modalDateIssued');
+        const modalCredentialId = document.getElementById('modalCredentialId');
+        const modalSkills = document.getElementById('modalSkills');
+        const externalLinkBtn = document.getElementById('externalLinkBtn');
+
+        // Open modal function
+        function openCertificateModal(certificateId) {
+            const certData = certificatesData[certificateId];
+            
+            // Update modal content
+            modalTitle.textContent = certData.title;
+            modalCertificateImage.src = certData.image;
+            modalCertificateImage.alt = certData.title;
+            modalCertificateName.textContent = certData.title;
+            modalCertificateDescription.textContent = certData.description;
+            modalIssuedBy.textContent = certData.issuedBy;
+            modalDateIssued.textContent = certData.date;
+            modalCredentialId.textContent = certData.credentialId;
+            modalSkills.textContent = certData.skills;
+            
+            // Update external link button
+            if (certData.externalLink) {
+                externalLinkBtn.href = certData.externalLink;
+                externalLinkBtn.style.display = 'inline-block';
+            } else {
+                externalLinkBtn.style.display = 'none';
+            }
+            
+            // Show modal
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        // Close modal function
+        function closeCertificateModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+
+        // Event listeners for certificate cards
+        document.querySelectorAll('.certificate-card, .view-certificate-btn').forEach(element => {
+            element.addEventListener('click', function(e) {
+                e.preventDefault();
+                const certificateId = this.getAttribute('data-certificate');
+                openCertificateModal(certificateId);
+            });
+        });
+
+        // Close modal when clicking close button
+        closeModalBtn.addEventListener('click', closeCertificateModal);
+
+        // Close modal when clicking outside the modal content
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeCertificateModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeCertificateModal();
+            }
+        });
+
         // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navMenu = document.getElementById('navMenu');
@@ -1102,7 +1626,7 @@
             });
         });
         
-        // Add subtle animation to skill items on scroll
+        // Add subtle animation to elements on scroll
         const observerOptions = {
             threshold: 0.1
         };
@@ -1126,6 +1650,14 @@
         
         // Observe project cards
         document.querySelectorAll('.project-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+        
+        // Observe certificate cards
+        document.querySelectorAll('.certificate-card').forEach(card => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(20px)';
             card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
