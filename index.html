@@ -551,10 +551,16 @@
             overflow: hidden;
         }
         
-        .certificate-icon {
-            font-size: 4rem;
-            color: var(--primary);
-            opacity: 0.7;
+        .certificate-thumbnail {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: var(--transition);
+        }
+        
+        .certificate-card:hover .certificate-thumbnail {
+            transform: scale(1.05);
         }
         
         .certificate-badge {
@@ -568,6 +574,7 @@
             font-size: 0.8rem;
             font-weight: 600;
             border: 1px solid rgba(255, 42, 109, 0.3);
+            z-index: 2;
         }
         
         .certificate-content {
@@ -972,6 +979,10 @@
             .certificate-image {
                 max-height: 300px;
             }
+            
+            .certificate-header {
+                height: 150px;
+            }
         }
         
         @media (max-width: 576px) {
@@ -1010,6 +1021,10 @@
             .certificate-info {
                 flex-direction: column;
                 gap: 1rem;
+            }
+            
+            .certificate-header {
+                height: 130px;
             }
         }
     </style>
@@ -1201,96 +1216,96 @@
         <div class="container">
             <h2>My Certificates</h2>
             <div class="certificates-grid">
-                <!-- Certificate 1 -->
+                <!-- Certificate 1 - Networking -->
                 <div class="certificate-card" data-certificate="1">
                     <div class="certificate-header">
-                        <i class="fas fa-certificate certificate-icon"></i>
+                        <img src="Networking-Certificate.png" alt="Networking Certificate" class="certificate-thumbnail">
                         <span class="certificate-badge">Click to View</span>
                     </div>
                     <div class="certificate-content">
-                        <h3>JavaScript Fundamentals</h3>
-                        <p>Completed an intensive course on JavaScript fundamentals including ES6+ features, DOM manipulation, and asynchronous programming.</p>
-                        <span class="certificate-date">Issued: May 2024</span>
+                        <h3>Networking Certificate</h3>
+                        <p>Certificate for Completing Basic Networking Course, Earner Has Knowledge towards managing and Modifying Networks.</p>
+                        <span class="certificate-date">Issued: October 10, 2025</span>
                         <a href="#" class="certificate-link view-certificate-btn" data-certificate="1">
                             <i class="fas fa-expand-alt"></i> View Certificate
                         </a>
                     </div>
                 </div>
                 
-                <!-- Certificate 2 -->
+                <!-- Certificate 2 - CSS -->
                 <div class="certificate-card" data-certificate="2">
                     <div class="certificate-header">
-                        <i class="fas fa-database certificate-icon"></i>
+                        <img src="Intro%20to%20CSS.png" alt="Intro to CSS Certificate" class="certificate-thumbnail">
                         <span class="certificate-badge">Click to View</span>
                     </div>
                     <div class="certificate-content">
-                        <h3>MySQL Database Design</h3>
-                        <p>Certificate for completing database design and optimization course covering normalization, indexing, and complex queries.</p>
-                        <span class="certificate-date">Issued: March 2024</span>
+                        <h3>Intro to CSS</h3>
+                        <p>Certificate for completing Intro to CSS Course On Tesda.</p>
+                        <span class="certificate-date">Issued: March 6, 2024</span>
                         <a href="#" class="certificate-link view-certificate-btn" data-certificate="2">
                             <i class="fas fa-expand-alt"></i> View Certificate
                         </a>
                     </div>
                 </div>
                 
-                <!-- Certificate 3 -->
+                <!-- Certificate 3 - Computer Servers -->
                 <div class="certificate-card" data-certificate="3">
                     <div class="certificate-header">
-                        <i class="fas fa-gamepad certificate-icon"></i>
+                        <img src="Setting%20up%20Computer%20Servers.png" alt="Setting Up Computer Servers Certificate" class="certificate-thumbnail">
                         <span class="certificate-badge">Click to View</span>
                     </div>
                     <div class="certificate-content">
-                        <h3>Game Development Basics</h3>
-                        <p>Completed foundational course in game development covering game design principles, Unity basics, and 2D game mechanics.</p>
-                        <span class="certificate-date">Issued: February 2024</span>
+                        <h3>Setting Up Computer Servers</h3>
+                        <p>Completed by: Setting up computer server certificates to ensure secure and trusted communication.</p>
+                        <span class="certificate-date">Issued: March 11, 2024</span>
                         <a href="#" class="certificate-link view-certificate-btn" data-certificate="3">
                             <i class="fas fa-expand-alt"></i> View Certificate
                         </a>
                     </div>
                 </div>
                 
-                <!-- Certificate 4 -->
+                <!-- Certificate 4 - Computer Systems -->
                 <div class="certificate-card" data-certificate="4">
                     <div class="certificate-header">
-                        <i class="fas fa-code certificate-icon"></i>
+                        <img src="Maintaining%20Computer%20Systems.png" alt="Maintaining Computer Systems Certificate" class="certificate-thumbnail">
                         <span class="certificate-badge">Click to View</span>
                     </div>
                     <div class="certificate-content">
-                        <h3>Web Development Bootcamp</h3>
-                        <p>Completed comprehensive web development course covering HTML5, CSS3, JavaScript, and responsive design principles.</p>
-                        <span class="certificate-date">Issued: January 2024</span>
+                        <h3>Maintaining Computer Systems and Networks</h3>
+                        <p>Completed by: Maintaining computer systems and networks.</p>
+                        <span class="certificate-date">Issued: March 11, 2024</span>
                         <a href="#" class="certificate-link view-certificate-btn" data-certificate="4">
                             <i class="fas fa-expand-alt"></i> View Certificate
                         </a>
                     </div>
                 </div>
                 
-                <!-- Certificate 5 -->
+                <!-- Certificate 5 - Installing & Config -->
                 <div class="certificate-card" data-certificate="5">
                     <div class="certificate-header">
-                        <i class="fab fa-java certificate-icon"></i>
+                        <img src="Installing%20and%20Config.png" alt="Installing and Configuring Certificate" class="certificate-thumbnail">
                         <span class="certificate-badge">Click to View</span>
                     </div>
                     <div class="certificate-content">
-                        <h3>Java Programming</h3>
-                        <p>Certificate for completing object-oriented programming course in Java, covering core concepts and application development.</p>
-                        <span class="certificate-date">Issued: December 2023</span>
+                        <h3>Installing and Configuring Computer Systems</h3>
+                        <p>Installing and configuring computer systems to ensure proper operation and performance.</p>
+                        <span class="certificate-date">Issued: March 6, 2024</span>
                         <a href="#" class="certificate-link view-certificate-btn" data-certificate="5">
                             <i class="fas fa-expand-alt"></i> View Certificate
                         </a>
                     </div>
                 </div>
                 
-                <!-- Certificate 6 -->
+                <!-- Certificate 6 - UI Design -->
                 <div class="certificate-card" data-certificate="6">
                     <div class="certificate-header">
-                        <i class="fas fa-server certificate-icon"></i>
+                        <img src="Developing%20DesignUI.png" alt="UI Design Certificate" class="certificate-thumbnail">
                         <span class="certificate-badge">Click to View</span>
                     </div>
                     <div class="certificate-content">
-                        <h3>PHP Backend Development</h3>
-                        <p>Completed backend development course focusing on PHP, MySQL integration, RESTful APIs, and server-side scripting.</p>
-                        <span class="certificate-date">Issued: November 2023</span>
+                        <h3>Developing Designs for User Interface</h3>
+                        <p>Developing designs for user interfaces that are simple, user-friendly, and visually clear.</p>
+                        <span class="certificate-date">Issued: April 14, 2024</span>
                         <a href="#" class="certificate-link view-certificate-btn" data-certificate="6">
                             <i class="fas fa-expand-alt"></i> View Certificate
                         </a>
@@ -1438,7 +1453,7 @@
     2: {
         title: "Intro to CSS",
         description: "Certificate for completing Intro to CSS Course On Tesda",
-        image: "Intro to CSS.png",  // Just the filename in root
+        image: "Intro%20to%20CSS.png",  // Just the filename in root
         issuedBy: "TESDA",
         date: "March 6, 2024",
         credentialId: "CSS-2024-001",
@@ -1448,7 +1463,7 @@
     3: {
         title: "Setting Up Computer Servers",
         description: "Completed by: Setting up computer server certificates to ensure secure and trusted communication.",
-        image: "Setting up Computer Servers.png",  // Just the filename in root
+        image: "Setting%20up%20Computer%20Servers.png",  // Just the filename in root
         issuedBy: "TESDA",
         date: "March 11, 2024",
         credentialId: "SCS-2024-001",
@@ -1458,7 +1473,7 @@
     4: {
         title: "Maintaining Computer Systems and Networks",
         description: "Completed by: Maintaining computer systems and networks",
-        image: "Maintaining Computer Systems.png",  // Just the filename in root
+        image: "Maintaining%20Computer%20Systems.png",  // Just the filename in root
         issuedBy: "TESDA",
         date: " March 11, 2024",
         credentialId: "MCS-2024-001",
@@ -1468,7 +1483,7 @@
     5: {
         title: "Installing and Configuring Computer Systems",
         description: "Installing and configuring computer systems to ensure proper operation and performance.",
-        image: "Installing and Config.png",  // Just the filename in root
+        image: "Installing%20and%20Config.png",  // Just the filename in root
         issuedBy: "TESDA",
         date: "March 6, 2024",
         credentialId: "ICS-2024-001",
@@ -1478,7 +1493,7 @@
     6: {
         title: "Developing Designs for User Interface",
         description: "Developing designs for user interfaces that are simple, user-friendly, and visually clear.",
-        image: "Developing DesignUI.png",  // Just the filename in root
+        image: "Developing%20DesignUI.png",  // Just the filename in root
         issuedBy: "TESDA",
         date: "April 14, 2024",
         credentialId: "UI-2024-001",
