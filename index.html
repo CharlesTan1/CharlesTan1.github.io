@@ -1425,63 +1425,67 @@
     <script>
         // Certificate data - Using relative paths from the same repository
         const certificatesData = {
-            1: {
-                title: "Networking Certificate",
-                description: "Certificate for Completing Basic Networking Course, Earner Has Knowledge towards managing and Modifying Networks",
-                image: "https://raw.githubusercontent.com/CharlesTan1/CharlesTan1.github.io/main/images/certificates/Networking-Certificate.png",
-                issuedBy: "Netacad, Credly",
-                date: "October 10, 2025",
-                credentialId: "NC-2025-001", 
-                skills: "Basic Maintenance and Managament of Networks and Servers",
-                externalLink: "https://www.credly.com/badges/5ffaf686-81da-4287-a126-f2b3c8169215"
-            },
-            2: {
-                title: "Intro to CSS",
-                description: "Certificate for completing Intro to CSS Course On Tesda",
-                image: "images/certificates/Intro to CSS.png",
-                issuedBy: "TESDA",
-                date: "March 6, 2024",
-                skills: "Basic CSS Elements",
-                externalLink: "" 
-            },
-            3: {
-                title: "Setting Up Computer Servers",
-                description: "Completed by: Setting up computer server certificates to ensure secure and trusted communication.",
-                image: "images/certificates/Setting up Computer Servers.png",
-                issuedBy: "TESDA",
-                date: "March 11, 2024",
-                skills: "Completed by: Installing and setting up computer servers",
-                externalLink: "" 
-            },
-            4: {
-                title: "Maintaining Computer Systems and Networks",
-                description: "Completed by: Maintaining computer systems and networks",
-                image: "images/certificates/Maintaining Computer Systems.png",
-                issuedBy: "TESDA",
-                date: " March 11, 2024",
-                skills: "Ability to maintain computer systems and networks, perform basic troubleshooting, and assist in server setup and configuration.",
-                externalLink: ""
-            },
-            5: {
-                title: "Installing and Configuring Computer Systems",
-                description: "Installing and configuring computer systems to ensure proper operation and performance.",
-                image: "images/certificates/Installing and Config.png",
-                issuedBy: "TESDA",
-                date: "March 6, 2024",
-                skills: "Computer system installation, basic configuration, troubleshooting, and hardware/software setup.",
-                externalLink: ""
-            },
-            6: {
-                title: "Developing Designs for User Interface",
-                description: "Developing designs for user interfaces that are simple, user-friendly, and visually clear.",
-                image: "images/certificates/Developing DesignUI.png",
-                issuedBy: "TESDA",
-                date: "April 14, 2024",
-
-                skills: "UI design basics, layout planning, usability principles, and basic design tools.",
-                externalLink: ""
-            }
-        };
+    1: {
+        title: "Networking Certificate",
+        description: "Certificate for Completing Basic Networking Course, Earner Has Knowledge towards managing and Modifying Networks",
+        image: "Networking-Certificate.png",  // Just the filename in root
+        issuedBy: "Netacad, Credly",
+        date: "October 10, 2025",
+        credentialId: "NC-2025-001",
+        skills: "Basic Maintenance and Management of Networks and Servers",
+        externalLink: "https://www.credly.com/badges/5ffaf686-81da-4287-a126-f2b3c8169215"
+    },
+    2: {
+        title: "Intro to CSS",
+        description: "Certificate for completing Intro to CSS Course On Tesda",
+        image: "Intro to CSS.png",  // Just the filename in root
+        issuedBy: "TESDA",
+        date: "March 6, 2024",
+        credentialId: "CSS-2024-001",
+        skills: "Basic CSS Elements",
+        externalLink: ""
+    },
+    3: {
+        title: "Setting Up Computer Servers",
+        description: "Completed by: Setting up computer server certificates to ensure secure and trusted communication.",
+        image: "Setting up Computer Servers.png",  // Just the filename in root
+        issuedBy: "TESDA",
+        date: "March 11, 2024",
+        credentialId: "SCS-2024-001",
+        skills: "Completed by: Installing and setting up computer servers",
+        externalLink: ""
+    },
+    4: {
+        title: "Maintaining Computer Systems and Networks",
+        description: "Completed by: Maintaining computer systems and networks",
+        image: "Maintaining Computer Systems.png",  // Just the filename in root
+        issuedBy: "TESDA",
+        date: " March 11, 2024",
+        credentialId: "MCS-2024-001",
+        skills: "Ability to maintain computer systems and networks, perform basic troubleshooting, and assist in server setup and configuration.",
+        externalLink: ""
+    },
+    5: {
+        title: "Installing and Configuring Computer Systems",
+        description: "Installing and configuring computer systems to ensure proper operation and performance.",
+        image: "Installing and Config.png",  // Just the filename in root
+        issuedBy: "TESDA",
+        date: "March 6, 2024",
+        credentialId: "ICS-2024-001",
+        skills: "Computer system installation, basic configuration, troubleshooting, and hardware/software setup.",
+        externalLink: ""
+    },
+    6: {
+        title: "Developing Designs for User Interface",
+        description: "Developing designs for user interfaces that are simple, user-friendly, and visually clear.",
+        image: "Developing DesignUI.png",  // Just the filename in root
+        issuedBy: "TESDA",
+        date: "April 14, 2024",
+        credentialId: "UI-2024-001",
+        skills: "UI design basics, layout planning, usability principles, and basic design tools.",
+        externalLink: ""
+    }
+};
 
         // Modal elements
         const modal = document.getElementById('certificateModal');
